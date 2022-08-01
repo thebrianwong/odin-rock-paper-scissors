@@ -6,9 +6,9 @@ function getComputerChoice() {
     } else if (randomValue === 2) {
         choice = "Paper";
     } else {
-        choice = "Scissors"
+        choice = "Scissors";
     }
-    console.log(`The computer picked ${choice}!`)
+    console.log(`The computer picked ${choice}!`);
     return choice;
 }
 
@@ -50,7 +50,7 @@ function game() {
         } while (inputValidation(playerSelection) === false);
         let computerSelection = getComputerChoice();
         let results = playRound(playerSelection, computerSelection);
-        console.log(`You picked ${playerSelection}!`)
+        console.log(`You picked ${playerSelection}!`);
         console.log(results);
         if (results.substring(4,7) === "Win") {
             playerPoints++;
