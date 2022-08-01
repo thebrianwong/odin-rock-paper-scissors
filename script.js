@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Checks if user input is a valid option in the game. If not, the player will prompted again until they enter a valid option. 
+// Checks if player input is a valid option in the game. If not, the player will prompted again until they enter a valid option. 
 function inputValidation(playerInput) {
     if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
         return true;
@@ -38,22 +38,30 @@ function inputValidation(playerInput) {
     return false;
 }
 
+// Alters input so that it that the first letter is uppercase and rest of the word is lowercase.
+function fixCaseSensitivity(string) {
+    let firstLetterUpper = string.slice(0,1).toUpperCase();
+    let restOfWordLower = string.slice(1, string.length).toLowerCase();
+    string = firstLetterUpper + restOfWordLower;
+    return string;
+}
+
 function game() {
     let playerPoints = 0;
     let computerPoints = 0;
-    // i starts at 1 so that the displayed Round Number makes sense.
+    // i starts at 1 so that the displayed Round Number starts at 1, not 0.
     for (let i = 1; i < 6; i++) {
         console.log(`Round ${i}`);
+        // Do while loop that asks player for input until they enter a valid option.
         do {
             var playerSelection = prompt("Rock, Paper, or Scissors?");
-            let firstLetterUpper = playerSelection.slice(0,1).toUpperCase();
-            let restOfWordLower = playerSelection.slice(1, playerSelection.length).toLowerCase();
-            playerSelection = firstLetterUpper + restOfWordLower;
+            playerSelection = fixCaseSensitivity(playerSelection);
         } while (inputValidation(playerSelection) === false);
         let computerSelection = getComputerChoice();
         let results = playRound(playerSelection, computerSelection);
         console.log(`You picked ${playerSelection}!`);
         console.log(results);
+        // Looks at the results message to see if the player or the computer won and gives a point accordingly.
         if (results.substring(4,7) === "Win") {
             playerPoints++;
         } else if (results.substring(4,8) === "Lose") {
