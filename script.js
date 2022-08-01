@@ -62,6 +62,11 @@ function game() {
         console.log(`You picked ${playerSelection}!`);
         console.log(results);
         // Looks at the results message to see if the player or the computer won and gives a point accordingly.
+        /* If I had to make any further changes, I would change this logic so that it isn't so weirdly reliant on looking for a specific word in a specific range of 
+        characters specific string. Instead, I would change playRound() to return "Win", "Lose", or "Tie" instead of full strings. To mimic the announcement messages 
+        of round results that currently exist, I would use the new return values of playRound() and the playerSelection and the computerSelection in an if statement 
+        to print the announcement messages. An issue there is that "Scissors" is plural whereas "Rock" and "Paper" are singular, so there is some grammar issues 
+        there. */
         if (results.substring(4,7) === "Win") {
             playerPoints++;
         } else if (results.substring(4,8) === "Lose") {
