@@ -30,6 +30,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Checks if user input is a valid option in the game. If not, the player will prompted again until they enter a valid option. 
 function inputValidation(playerInput) {
     if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
         return true;
@@ -40,6 +41,7 @@ function inputValidation(playerInput) {
 function game() {
     let playerPoints = 0;
     let computerPoints = 0;
+    // i starts at 1 so that the displayed Round Number makes sense.
     for (let i = 1; i < 6; i++) {
         console.log(`Round ${i}`);
         do {
