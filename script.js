@@ -61,16 +61,16 @@ function game() {
     console.log("Final Results");
     if (playerPoints > computerPoints) {
         console.log("You Win!");
-        console.log("Player Points: " + playerPoints);
-        console.log("Computer Points: " + computerPoints);
+        console.log(`Player Points: ${playerPoints}`);
+        console.log(`Computer Points: ${computerPoints}`);
     } else if (computerPoints > playerPoints) {
         console.log("You Lose!");
-        console.log("Player Points: " + playerPoints);
-        console.log("Computer Points: " + computerPoints);
+        console.log(`Player Points: ${playerPoints}`);
+        console.log(`Computer Points: ${computerPoints}`);
     } else {
         console.log("It's a Tie!");
-        console.log("Player Points: " + playerPoints);
-        console.log("Computer Points: " + computerPoints);
+        console.log(`Player Points: ${playerPoints}`);
+        console.log(`Computer Points: ${computerPoints}`);
     }
 }
 
