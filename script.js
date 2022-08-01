@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Checks if player input is a valid option in the game. If not, the player will prompted again until they enter a valid option. 
+// Checks if player input is a valid option in the game. If not, the player will be prompted again until they enter a valid option. 
 function inputValidation(playerInput) {
     if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
         return true;
@@ -38,7 +38,7 @@ function inputValidation(playerInput) {
     return false;
 }
 
-// Alters input so that it that the first letter is uppercase and rest of the word is lowercase.
+// Alters input so that the first letter is uppercase and the rest of the word is lowercase.
 function fixCaseSensitivity(string) {
     let firstLetterUpper = string.slice(0,1).toUpperCase();
     let restOfWordLower = string.slice(1, string.length).toLowerCase();
