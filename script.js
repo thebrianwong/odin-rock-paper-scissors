@@ -8,7 +8,7 @@ function getComputerChoice() {
     } else {
         choice = "Scissors"
     }
-    console.log(choice)
+    console.log(`The computer picked ${choice}!`)
     return choice;
 }
 
@@ -31,38 +31,46 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function inputValidation(playerInput) {
-    let firstLetterUpper = playerInput.slice(0,1).toUpperCase();
-    let restOfWordLower = playerInput.slice(1, playerInput.length).toLowerCase();
-    playerInput = firstLetterUpper + restOfWordLower;
-    if (playerInput != "Rock" || playerInput != "Paper" || playerInput != "Scissors") {
-        return false;
+    if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
+        return true;
     }
-    return true;
+    return false;
 }
 
 function game() {
     let playerPoints = 0;
     let computerPoints = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
+        console.log(`Round ${i}`);
         do {
-            var playerSelection = prompt("Rock, Paper, or Scissors?")
+            var playerSelection = prompt("Rock, Paper, or Scissors?");
+            let firstLetterUpper = playerSelection.slice(0,1).toUpperCase();
+            let restOfWordLower = playerSelection.slice(1, playerSelection.length).toLowerCase();
+            playerSelection = firstLetterUpper + restOfWordLower;
         } while (inputValidation(playerSelection) === false);
         let computerSelection = getComputerChoice();
         let results = playRound(playerSelection, computerSelection);
-        if (results.slice(4,3) === "Win") {
+        console.log(`You picked ${playerSelection}!`)
+        console.log(results);
+        if (results.substring(4,7) === "Win") {
             playerPoints++;
-            console.log(results);
-        } else if (results.slice(4,4) === "Lose") {
+        } else if (results.substring(4,8) === "Lose") {
             computerPoints++;
-            console.log(results);
         }
     }
+    console.log("Final Results");
     if (playerPoints > computerPoints) {
         console.log("You Win!");
+        console.log("Player Points: " + playerPoints);
+        console.log("Computer Points: " + computerPoints);
     } else if (computerPoints > playerPoints) {
         console.log("You Lose!");
+        console.log("Player Points: " + playerPoints);
+        console.log("Computer Points: " + computerPoints);
     } else {
         console.log("It's a Tie!");
+        console.log("Player Points: " + playerPoints);
+        console.log("Computer Points: " + computerPoints);
     }
 }
 
