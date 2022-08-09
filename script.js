@@ -8,7 +8,6 @@ function getComputerChoice() {
     } else {
         choice = "Scissors";
     }
-    console.log(`The computer picked ${choice}!`);
     return choice;
 }
 
@@ -92,10 +91,14 @@ function game() {
 //game();
 
 let message = document.querySelector(".message");
+let computerSign = document.querySelector(".computer");
+let computerChoice;
 let results;
 
 const showResults = (choice) => {
-    results = playRound(choice, getComputerChoice());
+    computerChoice = getComputerChoice();
+    results = playRound(choice, computerChoice);
+    computerSign.textContent = `The computer picked ${computerChoice}!`;
     message.textContent = results;
 }
 
