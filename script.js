@@ -49,8 +49,8 @@ function game() {
     let playerPoints = 0;
     let computerPoints = 0;
     // i starts at 1 so that the displayed Round Number starts at 1, not 0.
-   // for (let i = 1; i < 6; i++) {
-       // console.log(`Round ${i}`);
+    for (let i = 1; i < 6; i++) {
+        console.log(`Round ${i}`);
         // Do while loop that asks player for input until they enter a valid option.
         do {
             var playerSelection = prompt("Rock, Paper, or Scissors?");
@@ -71,7 +71,7 @@ function game() {
         } else if (results.substring(4,8) === "Lose") {
             computerPoints++;
         }
-  //  }
+    }
     console.log("Final Results");
     if (playerPoints > computerPoints) {
         console.log("You Win!");
@@ -92,14 +92,25 @@ function game() {
 
 let message = document.querySelector(".message");
 let computerSign = document.querySelector(".computer");
+let playerPoints = 0;
+let computerPoints = 0;
 let computerChoice;
 let results;
+
+const pickWinner = (message) => {
+    if (message.substring(4,7) === "Win") {
+        playerPoints++;
+    } else if (message.substring(4,8) === "Lose") {
+        computerPoints++;
+    }
+}
 
 const showResults = (choice) => {
     computerChoice = getComputerChoice();
     results = playRound(choice, computerChoice);
     computerSign.textContent = `The computer picked ${computerChoice}!`;
     message.textContent = results;
+    pickWinner(results);
 }
 
 let rock = document.querySelector("#rock");
