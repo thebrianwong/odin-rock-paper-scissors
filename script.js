@@ -90,12 +90,8 @@ function game() {
 
 //game();
 
-let message = document.querySelector(".message");
-let computerSign = document.querySelector(".computer");
 let playerPoints = 0;
 let computerPoints = 0;
-let computerChoice;
-let results;
 
 const pickWinner = (message) => {
     if (message.substring(4,7) === "Win") {
@@ -106,6 +102,10 @@ const pickWinner = (message) => {
 }
 
 const showResults = (choice) => {
+    let message = document.querySelector(".message");
+    let computerSign = document.querySelector(".computer");
+    let results;
+    let computerChoice;
     computerChoice = getComputerChoice();
     results = playRound(choice, computerChoice);
     computerSign.textContent = `The computer picked ${computerChoice}!`;
