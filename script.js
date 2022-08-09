@@ -91,17 +91,23 @@ function game() {
 
 //game();
 
+let message = document.querySelector(".message");
+let results;
+
 let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    console.log(playRound("Rock", getComputerChoice()))
+    results = playRound("Rock", getComputerChoice());
+    message.textContent = results;
 });
 
 let paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    console.log(playRound("Paper", getComputerChoice()))
+    results = playRound("Paper", getComputerChoice());
+    message.textContent = results;
 });
 
 let scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    console.log(playRound("Scissors", getComputerChoice()))
+    results = playRound("Scissors", getComputerChoice());
+    message.textContent = results;
 });
