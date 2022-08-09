@@ -113,17 +113,27 @@ const showResults = (choice) => {
     pickWinner(results);
 }
 
+const showPoints = () => {
+    let playerDisplay = document.querySelector(".player-points");
+    let computerDisplay = document.querySelector(".computer-points");
+    playerDisplay.textContent = `You currently have ${playerPoints} points.`;
+    computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
+}
+
 let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     showResults("Rock");
+    showPoints();
 });
 
 let paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     showResults("Paper");
+    showPoints();
 });
 
 let scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     showResults("Scissors");
+    showPoints();
 });
