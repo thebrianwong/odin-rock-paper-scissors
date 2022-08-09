@@ -116,6 +116,7 @@ const showResults = (choice) => {
 const showPoints = () => {
     let playerDisplay = document.querySelector(".player-points");
     let computerDisplay = document.querySelector(".computer-points");
+    // Later: add if statement so that these messages say "point" if player or computer only have 1 point
     playerDisplay.textContent = `You currently have ${playerPoints} points.`;
     computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
 }
