@@ -121,11 +121,38 @@ const showPoints = () => {
     computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
 }
 
+const removeText = () => {
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => {
+        div.textContent = "";
+    })
+}
+
+const enableButtons = () => {
+    let buttons = document.querySelectorAll(".option");
+    buttons.forEach((button) => {
+        button.disabled = false;
+    })
+}
+
+const resetGame = () => {
+    playerPoints = 0;
+    computerPoints = 0;
+    let playAgain = document.querySelector("#play-again");
+    playAgain.remove();
+    removeText();
+    enableButtons();
+}
+
 const playAgain = () => {
     let playAgain = document.createElement("input");
     let body = document.querySelector("body");
     playAgain.setAttribute("type", "button");
     playAgain.setAttribute("value", "Play Again");
+    playAgain.setAttribute("id", "play-again");
+    playAgain.addEventListener("click", () => {
+        resetGame();
+    })
     body.append(playAgain);
 }
 
