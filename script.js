@@ -121,13 +121,23 @@ const showPoints = () => {
     computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
 }
 
+const playAgain = () => {
+    let playAgain = document.createElement("input");
+    let body = document.querySelector("body");
+    playAgain.setAttribute("type", "button");
+    playAgain.setAttribute("value", "Play Again");
+    body.append(playAgain);
+}
+
 const checkPoints = () => {
     if (playerPoints === 5 || computerPoints === 5) {
         let gameOver = document.querySelector(".game-over");
         if (playerPoints === 5) {
             gameOver.textContent = "Congratulations, you won!";
+            playAgain();
         } else if (computerPoints === 5) {
             gameOver.textContent = "You lose, try again!";
+            playAgain();
         }
     }
 }
