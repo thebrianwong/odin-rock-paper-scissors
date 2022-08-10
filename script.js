@@ -64,7 +64,7 @@ const checkPoints = () => {
     }
 }
 
-function getComputerChoice() {
+const getComputerChoice = () => {
     let choice;
     let randomValue = Math.floor((Math.random() * 3) + 1);
     if (randomValue === 1) {
@@ -77,7 +77,7 @@ function getComputerChoice() {
     return choice;
 }
 
-function playRound(playerSelection, computerSelection) {
+const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === "Rock" && computerSelection === "Paper") {
         return "You Lose! Paper Beats Rock!";
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
