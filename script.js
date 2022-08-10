@@ -125,16 +125,39 @@ let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     showResults("Rock");
     showPoints();
+    checkScores();
 });
 
 let paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     showResults("Paper");
     showPoints();
+    checkScores();
 });
 
 let scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     showResults("Scissors");
     showPoints();
+    checkScores();
 });
+
+while (playerPoints === 5 || computerPoints === 5) {
+    let gameOver = document.querySelector(".game-over");
+    if (playerPoints === 5) {
+        gameOver.textContent = "Congratulations, you won!";
+    } else if (computerPoints === 5) {
+        gameOver.textContent = "You lose, try again!";
+    }
+}
+
+const checkScores = () => {
+    if (playerPoints === 5 || computerPoints === 5) {
+        let gameOver = document.querySelector(".game-over");
+        if (playerPoints === 5) {
+            gameOver.textContent = "Congratulations, you won!";
+        } else if (computerPoints === 5) {
+            gameOver.textContent = "You lose, try again!";
+        }
+    }
+}
