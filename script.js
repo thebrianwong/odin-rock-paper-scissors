@@ -129,15 +129,24 @@ const playAgain = () => {
     body.append(playAgain);
 }
 
+const disableButtons = () => {
+    let buttons = document.querySelectorAll(".option");
+    buttons.forEach((button) => {
+        button.disabled = true;
+    })
+}
+
 const checkPoints = () => {
     if (playerPoints === 5 || computerPoints === 5) {
         let gameOver = document.querySelector(".game-over");
         if (playerPoints === 5) {
             gameOver.textContent = "Congratulations, you won!";
             playAgain();
+            disableButtons();
         } else if (computerPoints === 5) {
             gameOver.textContent = "You lose, try again!";
             playAgain();
+            disableButtons();
         }
     }
 }
