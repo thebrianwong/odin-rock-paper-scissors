@@ -121,6 +121,17 @@ const showPoints = () => {
     computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
 }
 
+const checkScores = () => {
+    if (playerPoints === 5 || computerPoints === 5) {
+        let gameOver = document.querySelector(".game-over");
+        if (playerPoints === 5) {
+            gameOver.textContent = "Congratulations, you won!";
+        } else if (computerPoints === 5) {
+            gameOver.textContent = "You lose, try again!";
+        }
+    }
+}
+
 let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     showResults("Rock");
@@ -141,23 +152,3 @@ scissors.addEventListener("click", () => {
     showPoints();
     checkScores();
 });
-
-while (playerPoints === 5 || computerPoints === 5) {
-    let gameOver = document.querySelector(".game-over");
-    if (playerPoints === 5) {
-        gameOver.textContent = "Congratulations, you won!";
-    } else if (computerPoints === 5) {
-        gameOver.textContent = "You lose, try again!";
-    }
-}
-
-const checkScores = () => {
-    if (playerPoints === 5 || computerPoints === 5) {
-        let gameOver = document.querySelector(".game-over");
-        if (playerPoints === 5) {
-            gameOver.textContent = "Congratulations, you won!";
-        } else if (computerPoints === 5) {
-            gameOver.textContent = "You lose, try again!";
-        }
-    }
-}
