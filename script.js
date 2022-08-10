@@ -121,7 +121,7 @@ const showPoints = () => {
     computerDisplay.textContent = `The computer currently has ${computerPoints} points.`;
 }
 
-const checkScores = () => {
+const checkPoints = () => {
     if (playerPoints === 5 || computerPoints === 5) {
         let gameOver = document.querySelector(".game-over");
         if (playerPoints === 5) {
@@ -136,19 +136,19 @@ let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     showResults("Rock");
     showPoints();
-    checkScores();
+    checkPoints();
 });
 
 let paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     showResults("Paper");
     showPoints();
-    checkScores();
+    checkPoints();
 });
 
 let scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     showResults("Scissors");
     showPoints();
-    checkScores();
+    checkPoints();
 });
