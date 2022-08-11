@@ -43,7 +43,7 @@ p {
 }
 
 .game-over {
-    line-height: 1.6;
     white-space: pre-line;
     margin: 15px 30px 30px;
+    line-height: 1.6;
 }
