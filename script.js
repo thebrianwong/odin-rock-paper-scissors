@@ -132,7 +132,7 @@ const resetGame = () => {
 }
 
 const removeText = () => {
-    let divs = document.querySelectorAll("div");
+    let divs = document.querySelectorAll("div.text-container div");
     divs.forEach((div) => {
         div.textContent = "";
     })
