@@ -2,6 +2,7 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
+.title-container,
 .button-container,
 .text-container {
     display: flex;
@@ -11,6 +12,7 @@ body {
     justify-content: center;
 }
 
+.title-container,
 .text-container {
     flex-direction: column;
     align-items: center;
