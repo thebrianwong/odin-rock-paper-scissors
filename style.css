@@ -7,7 +7,7 @@ input {
 }
 
 h1 {
-    margin: 50px 0 25px;
+    margin: 50px 0 75px;
 }
 
 p {
@@ -38,7 +38,12 @@ p {
     text-align: center;
 }
 
+.text {
+    margin-bottom: 15px;
+}
+
 .game-over {
+    line-height: 1.6;
     white-space: pre-line;
-    margin: 30px;
+    margin: 15px 30px 30px;
 }
