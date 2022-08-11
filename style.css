@@ -2,6 +2,10 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
+input {
+    font-family: inherit;
+}
+
 .title-container,
 .button-container,
 .text-container {
