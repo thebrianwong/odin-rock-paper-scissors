@@ -53,11 +53,11 @@ const checkPoints = () => {
     if (playerPoints === 5 || computerPoints === 5) {
         let gameOver = document.querySelector(".game-over");
         if (playerPoints === 5) {
-            gameOver.textContent = "Congratulations, you won!";
+            gameOver.textContent = "Congratulations, you won! \nPlay again to beat more robots!";
             playAgain();
             disableButtons();
         } else if (computerPoints === 5) {
-            gameOver.textContent = "You lose, try again! \r\n(Our robot overlords are quite generous)";
+            gameOver.textContent = "You lose, try again! \n(Our robot overlords are quite generous)";
             playAgain();
             disableButtons();
         }

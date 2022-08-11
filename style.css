@@ -10,8 +10,8 @@ h1 {
     margin: 50px 0 25px;
 }
 
-p,
-div {
+p {
+    margin: 0;
     line-height: 1.6;
 }
 
@@ -27,6 +27,8 @@ div {
 
 .button-container {
     justify-content: center;
+    margin: 30px;
+    gap: 30px;
 }
 
 .title-container,
@@ -38,4 +40,5 @@ div {
 
 .game-over {
     white-space: pre-line;
+    margin: 30px;
 }
