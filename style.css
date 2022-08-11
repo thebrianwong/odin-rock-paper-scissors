@@ -6,6 +6,10 @@ input {
     font-family: inherit;
 }
 
+.container {
+    margin: 0 500px;
+}
+
 .title-container,
 .button-container,
 .text-container {
