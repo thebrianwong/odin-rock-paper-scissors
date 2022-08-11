@@ -57,7 +57,7 @@ const checkPoints = () => {
             playAgain();
             disableButtons();
         } else if (computerPoints === 5) {
-            gameOver.textContent = "You lose, try again!";
+            gameOver.textContent = "You lose, try again! \r\n(Our robot overlords are quite generous)";
             playAgain();
             disableButtons();
         }
