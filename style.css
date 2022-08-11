@@ -6,6 +6,10 @@ input {
     font-family: inherit;
 }
 
+h1 {
+    margin: 50px 0 25px;
+}
+
 .container {
     margin: 0 500px;
 }
