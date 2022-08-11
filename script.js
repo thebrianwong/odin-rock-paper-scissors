@@ -105,14 +105,14 @@ const pickWinner = (message) => {
 
 const playAgain = () => {
     let playAgain = document.createElement("input");
-    let body = document.querySelector("body");
+    let textContainer = document.querySelector(".text-container");
     playAgain.setAttribute("type", "button");
     playAgain.setAttribute("value", "Play Again");
     playAgain.setAttribute("id", "play-again");
     playAgain.addEventListener("click", () => {
         resetGame();
     })
-    body.append(playAgain);
+    textContainer.append(playAgain);
 }
 
 const disableButtons = () => {
