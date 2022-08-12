@@ -36,8 +36,12 @@ input {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     margin: 0 500px;
     position: relative;
+    height: 95vh;
+    justify-content: space-between;
 }
 
 .title-container,
@@ -67,4 +71,9 @@ input {
     white-space: pre-line;
     margin: 15px 30px 30px;
     line-height: 1.6;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
