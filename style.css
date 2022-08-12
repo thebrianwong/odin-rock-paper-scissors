@@ -15,6 +15,10 @@ p {
     line-height: 1.6;
 }
 
+input {
+    padding: 5px 10px;
+}
+
 .container {
     margin: 0 500px;
 }
