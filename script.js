@@ -1,6 +1,9 @@
+/* These 2 variables are the only globally scoped variables
+because they need to be passed in multiple functions. */
 let playerPoints = 0;
 let computerPoints = 0;
 
+// Add even listeners to sign buttons to simulate a round.
 let rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     showResults("Rock");
@@ -22,6 +25,7 @@ scissors.addEventListener("click", () => {
     checkPoints();
 });
 
+// Simulates a round and displays the computer's choice.
 const showResults = (choice) => {
     let message = document.querySelector(".message");
     let computerSign = document.querySelector(".computer");
@@ -34,6 +38,7 @@ const showResults = (choice) => {
     pickWinner(results);
 }
 
+// Displays the number of points the player and computer have.
 const showPoints = () => {
     let playerDisplay = document.querySelector(".player-points");
     let computerDisplay = document.querySelector(".computer-points");
@@ -49,6 +54,7 @@ const showPoints = () => {
     }
 }
 
+// Checks if anyone has 5 points and displays game over message depending on the winner.
 const checkPoints = () => {
     if (playerPoints === 5 || computerPoints === 5) {
         let gameOver = document.querySelector(".game-over");
@@ -64,6 +70,7 @@ const checkPoints = () => {
     }
 }
 
+// Determines what sign the computer chooses.
 const getComputerChoice = () => {
     let choice;
     let randomValue = Math.floor((Math.random() * 3) + 1);
@@ -77,6 +84,7 @@ const getComputerChoice = () => {
     return choice;
 }
 
+// Determines the outcome of a round based on the sign choices.
 const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === "Rock" && computerSelection === "Paper") {
         return "You Lose! Paper Beats Rock!";
@@ -95,6 +103,7 @@ const playRound = (playerSelection, computerSelection) => {
     }
 }
 
+// Looks at the string returned in playRound to determine the winner of a round and distribute a point accordingly.
 const pickWinner = (message) => {
     if (message.substring(4,7) === "Win") {
         playerPoints++;
@@ -103,6 +112,7 @@ const pickWinner = (message) => {
     }
 }
 
+// Creates a button that resets the game state to give the player an option to play again.
 const playAgain = () => {
     let playAgain = document.createElement("input");
     let textContainer = document.querySelector(".text-container");
@@ -115,6 +125,7 @@ const playAgain = () => {
     textContainer.append(playAgain);
 }
 
+// Disables the sign choice buttons upon the end of the game.
 const disableButtons = () => {
     let buttons = document.querySelectorAll(".option");
     buttons.forEach((button) => {
@@ -122,6 +133,7 @@ const disableButtons = () => {
     })
 }
 
+// Resets the game state.
 const resetGame = () => {
     playerPoints = 0;
     computerPoints = 0;
@@ -131,6 +143,7 @@ const resetGame = () => {
     enableButtons();
 }
 
+// Remove text that was displayed for the previous game.
 const removeText = () => {
     let divs = document.querySelectorAll("div.text-container div");
     divs.forEach((div) => {
@@ -138,6 +151,7 @@ const removeText = () => {
     })
 }
 
+// Enable the sign choice buttons so that player can play again.
 const enableButtons = () => {
     let buttons = document.querySelectorAll(".option");
     buttons.forEach((button) => {
